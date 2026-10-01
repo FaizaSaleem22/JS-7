@@ -118,27 +118,56 @@ document.write(newString + "<br>");
 // }
 
 // q15
-var user = prompt("Enter a password");
-var letterAndNum = false;
-var FirstNum = true;
-var userLength = true;
-var firstChar = user.charCodeAt(0)
-if(firstChar >=48 && firstChar <=57){
-        FirstNum = false;
-        alert("Password cannot begin with a number")
+// var user = prompt("Enter a password");
+// var hasNumber = false;
+// var hasAlphabets = false;
+// var firstChar = user.charCodeAt(0);
+// if(user.length < 6){
+//         alert("Password must be 6 characters long")
+// }else if(firstChar >=48 && firstChar <=57){
+//         alert("Password cannot begin with a number")
+// }else{
+//     for(var i=0; i<user.length; i++){
+//        var code = user.charCodeAt(i);
+//        if((code >=65 && code <=90) || (code >=97 && code <=122)){
+//          hasAlphabets = true;
+//        }
+//        if(code  >=48 && code <= 57){
+//             hasNumber=true;
+//         }
+//        if(hasNumber === true && hasAlphabets === true){
+//          alert("Valid password");
+//          break;
+//      }
+//     }
+//     if(!hasAlphabets){
+//       alert("Password must contain alphabets")
+//     }
+//     if(!hasNumber){
+//       alert("Password must contain numbers")
+//     }
+// }
+
+// q16
+var uni = "University of karachi";
+var arr = uni.split("");
+console.log(arr);
+document.write(arr, "<br>");
+
+// q17
+// var user = prompt("Enter your country name");
+// document.write("user input: " , user , "<br>");
+// var lastCharacter = user.at(-1);
+// document.write("Last character of input: " , lastCharacter, "<br>");
+
+// q18
+var str = "The quick brown fox jumps over the lazy dog";
+document.write("Text: ", str, "<br>");
+var arr = str.toLowerCase().split(" ")
+var count = 0
+for(var i=0; i<arr.length; i++){
+    if(arr[i] === "the"){
+        count++
     }
-if(user.length< 6){
-        userLength = false;
-        alert("Password must be 6 characters long")
 }
-for(var i=0; i<user.length; i++){
-     var code = user.charCodeAt(i);
-    if(((code >=65 && code <=90) || (code >=97 && code <=122)) && (code >= 48 && code <=57)){
-        letterAndNum = true;
-        alert("Valid password")
-        break;
-    }
-}
-if(letterAndNum === false && FirstNum === true && userLength === true){
-    alert("it must contain letters and numbers")
-}
+document.write("There are ", count, " occurence(s) of word 'the'")
